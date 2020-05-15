@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: install aspell
-      run: apt-get install aspell
+      run: sudo apt-get install aspell
     - name: install pyspelling
       run: pip3 install pyspelling
     - name: spellcheck
