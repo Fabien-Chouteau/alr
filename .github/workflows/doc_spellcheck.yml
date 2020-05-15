@@ -21,4 +21,4 @@ jobs:
     - name: install pyspelling
       run: pip install pyspelling
     - name: spellcheck
-      run: python pyspelling -c .github/spellcheck.yaml
+      run: python -m pyspelling -c .github/spellcheck.yaml
