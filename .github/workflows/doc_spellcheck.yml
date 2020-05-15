@@ -5,16 +5,20 @@ on:
     paths:
       - '**.md'
       - '**.txt'
-
 jobs:
   spellcheck:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
     - name: install aspell
-      run: sudo apt-get install aspell
+      run: sudo apt-get install aspell aspell-en
     - name: upgrade setuptools (Workaround)
       run: pip install --upgrade setuptools
     - name: install pyspelling
       run: pip install pyspelling
     - name: spellcheck
-      run: pyspelling -c .github/spellcheck.yaml
+      run: python pyspelling -c .github/spellcheck.yaml
