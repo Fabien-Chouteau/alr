@@ -10,5 +10,9 @@ jobs:
   spellcheck:
     runs-on: ubuntu-latest
     steps:
-    - name: Spellcheck Action
-      uses: rojopolis/spellcheck-github-actions@0.3.0
+    - name: install aspell
+      run: apt-get install aspell
+    - name: install pyspelling
+      run: pip3 install pyspelling
+    - name: spellcheck
+      uses: pyspelling -c .github/spellcheck.yaml
