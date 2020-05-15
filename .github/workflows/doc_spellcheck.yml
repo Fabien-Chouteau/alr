@@ -13,8 +13,8 @@ jobs:
     - name: install aspell
       run: sudo apt-get install aspell
     - name: upgrade setuptools (Workaround)
-      run: pip3 install --upgrade setuptools
+      run: pip install --upgrade setuptools
     - name: install pyspelling
-      run: pip3 install pyspelling
+      run: pip install pyspelling
     - name: spellcheck
       run: pyspelling -c .github/spellcheck.yaml
