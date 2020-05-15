@@ -15,4 +15,4 @@ jobs:
     - name: install pyspelling
       run: pip3 install pyspelling
     - name: spellcheck
-      uses: pyspelling -c .github/spellcheck.yaml
+      run: pyspelling -c .github/spellcheck.yaml
