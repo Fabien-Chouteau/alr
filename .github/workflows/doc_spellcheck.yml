@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: install aspell
       run: sudo apt-get install aspell
+    - name: upgrade setuptools (Workaround)
+      run: pip3 install --upgrade setuptools
     - name: install pyspelling
       run: pip3 install pyspelling
     - name: spellcheck
